@@ -307,7 +307,7 @@ a:hover,a:focus{
 .bars{
     height: 4px;
     width: 35px;
-    background: #fff !important;
+    background: #fff;
     border-radius: 1px;
     transform-origin: right;
     box-shadow: 0 0 5px #fff !important;
@@ -533,4 +533,8 @@ a:hover,a:focus{
     .logo_txt_min2{
         font-size: 18px;
     }
+}
+
+@media (prefers-color-scheme: dark){
+    .bars{background: #fff;}
 }

@@ -16,6 +16,7 @@
     --padd_v : 15px;
     --menu_hover_link_bg : rgba(64, 64, 64, 0.1);
     --card-shdow : 0 0 25px rgba(146, 187, 205, 0.5);
+    --fixed-white : #fff;
 }
 @media (prefers-color-scheme: dark){
     :root{
@@ -176,7 +177,7 @@ li{
     list-style: none;
 }
 a{
-    color: #fff;
+    color: var(--fixed-white);
     border-radius: 3px;
     font-size: 14px;
     font-weight: 500;
@@ -194,7 +195,7 @@ a:hover,a:focus{
 }
 .title{
     text-transform: uppercase;
-    color: #fff;
+    color: var(--fixed-white);
     font-weight: 700;
 }
 .active_page{
@@ -307,7 +308,7 @@ a:hover,a:focus{
 .bars{
     height: 4px;
     width: 35px;
-    background: #fff;
+    background: var(--fixed-white);
     border-radius: 1px;
     transform-origin: right;
     box-shadow: 0 0 5px #fff !important;

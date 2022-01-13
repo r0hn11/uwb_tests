@@ -40,6 +40,9 @@ let account_res = menu_links[6];
 let no_post_box = document.querySelector('.no_post');
 let shine = document.querySelector('.shine_btn');
 let btt = document.querySelector('.btt');
+let manage_db = document.querySelector('#mng a');
+let avatar_main = document.querySelector('.avatar');
+let name_on_card = document.getElementById('nameid');
 
 //----------------FUNCTIONS
 let menu_flag = 0;

@@ -16,8 +16,14 @@
     --padd_v : 15px;
     --menu_hover_link_bg : rgba(64, 64, 64, 0.1);
     --card-shdow : 0 0 25px rgba(146, 187, 205, 0.5);
+    --text-fade : rgba(68, 68, 68, 0.5);
     --fixed-white : #fff;
+    --valid-bg : #59E08F;
+    --warn-bg : #FF6960;
+    --shdow : 0 0 10px rgba(68, 68, 68, 0.6);
+    --usr-avt : url(../common_images/profile.svg);
 }
+
 @media (prefers-color-scheme: dark){
     :root{
         --text : #fff;
@@ -30,6 +36,8 @@
         --padd_v : 15px;
         --menu_hover_link_bg : rgba(255, 255, 255, 0.1);
         --card-shdow : 0 0 25px rgba(0, 0, 0, 0.5);
+        --text-fade : rgba(255, 255, 255, 0.7);
+        --shdow : 0 0 10px rgba(0, 0, 0, 0.5);
     }
 }
 body{
@@ -311,7 +319,7 @@ a:hover,a:focus{
     background: var(--fixed-white);
     border-radius: 1px;
     transform-origin: right;
-    box-shadow: 0 0 5px #fff !important;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.95) !important;
     transition: 0.2s 0.2s ease-in-out;
 }
 .bar2{transition-delay: 0s;}
@@ -365,9 +373,10 @@ a:hover,a:focus{
 }
 .acc_wrapper{
     align-items: center;
-    background: #fff;
+    color: var(--text);
+    background: var(--card);
     min-width: 200px;
-    box-shadow: 0 0 10px rgba(68, 68, 68, 0.6);
+    box-shadow: var(--shdow);
     text-align: center;
     border-radius: 10px;
     overflow: hidden;
@@ -381,8 +390,8 @@ a:hover,a:focus{
 .acc_wrapper .top .avatar{
     height: 70px;
     width: 70px;
-    background: url(../common_images/profile.svg) no-repeat center center/cover;
-    margin-bottom: 15px;
+    border-radius: 50%;
+    margin: 15px 0;
 }
 /*--------------------------------------------------------CARD LOW*/
 .acc_wrapper .low{

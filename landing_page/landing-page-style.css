@@ -49,13 +49,15 @@ svg>path{
     }
 }
 .shine_btn{
+    content: '';
     position: absolute;
     height: 150%;
     width: 30%;
     left: 0;
     top: 0;
     transform: translateX(-100px);
-    background: #fff;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px #fff;
 }
 .hidden_up{
     opacity: 0;
@@ -183,15 +185,16 @@ svg>path{
 /*-------------------------------------------------------- ABOUT*/
 .about_par{
     width: 100%;
-    color: #444 !important;
+    color: var(--text);
     justify-content: center;
     position: relative;
+    letter-spacing: 1px;
 }
 .about_par::before{
     content: '';
     position: absolute;
     inset: 0;
-    background: #fff !important;
+    background: var(--theme);
     z-index: -2;
 }
 .about_par::after{
@@ -229,7 +232,7 @@ svg>path{
 .about_par .abt_main .abt1 .abt_ttl{
     font-size: 40px;
     text-transform: capitalize;
-    color: var(--accent-dark);
+    color: var(--ttl-txt);
 }
 .about_par .abt_main .abt1 .abt_dsr{
     font-family: var(--formal);
@@ -249,7 +252,7 @@ svg>path{
     text-shadow: 0 0 5px #8bf3ff;
 }
 .experts:hover svg, .chats:hover svg, .camps:hover svg, .meets:hover svg{
-    filter: saturate(2) brightness(1.1) drop-shadow(0 0 5px rgba(194, 255, 254, 0.6));
+    filter: saturate(2) brightness(1.1) drop-shadow(var(--glow));
 }
 /*-------------------------------------------------------- ABOUT-PART2*/
 .about_par .abt_main .abt2{
@@ -545,5 +548,5 @@ svg>path{
 }
 
 @media (prefers-color-scheme: dark){
-    .shine_btn{background: #fff;}
+    .about_par::after{opacity: 0.12;}
 }

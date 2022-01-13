@@ -83,6 +83,7 @@
 }
 /*--------------------------------------------------------BACKTOTOP*/
 .btt{
+    color: var(--accent-dark);
     cursor: pointer;
     position: fixed;
     right: 0;
@@ -134,4 +135,7 @@
 @media screen and (max-width:375px) {
     .site_footer .abt .about_ttl_min{display: none;}
     .site_footer .abt .about_ttl_min2{display: block;}
+    .btt:hover>i, .btt:focus>i{
+        text-shadow: 0 0 4px rgb(30, 30, 30);
+    }
 }

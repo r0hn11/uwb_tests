@@ -7,13 +7,13 @@ let donate = document.querySelector('.donate_us_btn');
 
 //----------------FUNCTIONS
 gh_btn.addEventListener('mouseover', function(){
-    shine.style.animation = 'shine 0.95s ease-in-out 1 forwards';
+    shine.style.animation = 'shine 1.2s ease-in-out 1 forwards';
     setTimeout(() => {
         shine.style.animation = 'none';
     }, 2000);
 })
 gh_btn.addEventListener('focus', function(){
-    shine.style.animation = 'shine 0.95s ease-in-out 1 forwards';
+    shine.style.animation = 'shine 1.2s ease-in-out 1 forwards';
     setTimeout(() => {
         shine.style.animation = 'none';
     }, 2000);
@@ -22,7 +22,7 @@ gh_btn.addEventListener('focus', function(){
 window.onload = function(){
     console.log('done');
     setTimeout(() => {
-        shine.style.animation = 'shine 0.95s ease-in-out 1 forwards';
+        shine.style.animation = 'shine 1.2s ease-in-out 1 forwards';
         setTimeout(() => {
             shine.style.animation = 'none';
         }, 2000);

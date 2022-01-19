@@ -52,6 +52,7 @@ function menuToggle(){
         menu_bar[1].style.transform = 'scaleX(0)';
         menu_bar[2].style.transform = 'rotate(45deg)';
         menu.style.transform = 'translateX(0)';
+        menu.style.boxShadow = 'var(--prof-card-shdow)';
         let delay = 0.3;
         for(let i=0;i<menu_links.length;i++){
             delay += i*0.02;
@@ -72,6 +73,7 @@ function menuToggle(){
         menu_bar[1].style.transform = 'scaleX(1)';
         menu_bar[2].style.transform = 'rotate(0deg)';
         menu.style.transform = 'translateX(100%)';
+        menu.style.boxShadow = 'none';
         menu_links.forEach(li => {
             li.style.opacity = '0';
             li.style.transitionDelay = '0s';
@@ -82,29 +84,31 @@ function menuToggle(){
 }
 function menuOpen(){
     menu_bar[0].style.transform = 'rotate(-45deg)';
-        menu_bar[1].style.transform = 'scaleX(0)';
-        menu_bar[2].style.transform = 'rotate(45deg)';
-        menu.style.transform = 'translateX(0)';
-        let delay = 0.3;
-        for(let i=0;i<menu_links.length;i++){
-            delay += i*0.02;
-            menu_links[i].style.opacity = '1';
-            menu_links[i].style.transform = 'translateX(0)';
-            menu_links[i].style.transitionDelay = `${delay}s`;
-        }
-        setTimeout(() => {
-            menu_links.forEach(li => {
-                li.style.transitionDelay = '0s';
-            });
-        }, delay);
-        document.querySelector('.bar2').style.transitionDelay = '0s';
-        menu_flag = 1;
+    menu_bar[1].style.transform = 'scaleX(0)';
+    menu_bar[2].style.transform = 'rotate(45deg)';
+    menu.style.transform = 'translateX(0)';
+    menu.style.boxShadow = 'var(--prof-card-shdow)';
+    let delay = 0.3;
+    for(let i=0;i<menu_links.length;i++){
+        delay += i*0.02;
+        menu_links[i].style.opacity = '1';
+        menu_links[i].style.transform = 'translateX(0)';
+        menu_links[i].style.transitionDelay = `${delay}s`;
+    }
+    setTimeout(() => {
+        menu_links.forEach(li => {
+            li.style.transitionDelay = '0s';
+        });
+    }, delay);
+    document.querySelector('.bar2').style.transitionDelay = '0s';
+    menu_flag = 1;
 }
 function menuClose(){
     menu_bar[0].style.transform = 'rotate(0deg)';
     menu_bar[1].style.transform = 'scaleX(1)';
     menu_bar[2].style.transform = 'rotate(0deg)';
     menu.style.transform = 'translateX(100%)';
+    menu.style.boxShadow = 'none';
     menu_links.forEach(li => {
         li.style.opacity = '0';
         li.style.transitionDelay = '0s';
@@ -173,7 +177,7 @@ document.onscroll = function(){
 
 function nav_squish(){
     if(window.scrollY>50){
-        navbar_par.style.boxShadow = '0 0 15px rgba(64,64,64,0.5)';
+        navbar_par.style.boxShadow = 'var(--shdow)';
         if(window.innerWidth>900){
             navbar.style.paddingTop = '11px';
             navbar.style.paddingBottom = '11px';
@@ -255,7 +259,7 @@ window.addEventListener('scroll', function(){
     else extra_pad = 10;
     acc_par.style.paddingTop = `${navbar.offsetHeight+extra_pad}px`;
     team_menu.style.top = `${navbar.offsetHeight+extra_pad}px`;
-})
+});
 
 window.addEventListener('scroll',nav_squish);
 window.addEventListener('resize',nav_squish);

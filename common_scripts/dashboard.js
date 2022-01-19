@@ -2,7 +2,7 @@ let db_parent = document.querySelector('.db_wrap_par');
 let np_msg =  document.querySelector('.no_post_msg');
 let tbl_par =  document.querySelector('.blogs_table');
 let tbl = document.querySelector('.blogs_table table');
-let _inputs = document.querySelectorAll('input');
+let _inputs = document.querySelectorAll('.db_wrap_par input');
 let edit_prof = document.querySelector('.edit');
 let save_prof = document.querySelector('.save');
 let cancel_prof = document.querySelector('.cancel');
@@ -21,11 +21,6 @@ let bio = document.getElementById('user_bio');
 let mail = document.getElementById('user_mail');
 
 let avatars_icons = document.querySelectorAll('.avatars');
-
-let avt_style = window.getComputedStyle(avatar_main);
-let avt_bg = avt_style.getPropertyValue('background');
-let avatar_def = ' url(\\.\\.\\/common_images\\/profile\\.svg)';
-let new_avatar_def;
 
 
 function rowcheck(){
@@ -46,7 +41,6 @@ function allow_edit_profile(){
     _inputs.forEach(e => {
         e.style.display = 'inline';
     });
-    name_on_card.innerText = name.innerHTML;
     _inputs[0].value = name.innerHTML;
     _inputs[1].value = from.innerHTML;
     _inputs[2].value = bio.innerHTML;
@@ -77,6 +71,9 @@ function add_avatar(){
         });
     }, avatars_icons.length/10 + 0.5);
 }
+
+let default_avatar = profile_pic.src;
+let new_default_avatar = profile_pic.src;
 function set_avatar(){
     for(let i=0;i<avatars_icons.length;i++){
         avatars_icons[i].addEventListener('click', function(){
@@ -86,11 +83,14 @@ function set_avatar(){
                 e.style.transitionDelay = '0s';
             });
             profile_pic.src = `../common_images/avatars/av${i+1}.png`;
-            avatar_main.src = `../common_images/avatars/av${i+1}.png`;
+            new_default_avatar = profile_pic.src;
         });
     }
 }
 function save_edit_profile(){
+    profile_pic.src = new_default_avatar;
+    avatar_main.src = new_default_avatar;
+    default_avatar = new_default_avatar;
     name_on_card.innerText = _inputs[0].value;
     name.innerHTML = _inputs[0].value;
     from.innerHTML = _inputs[1].value;
@@ -105,8 +105,11 @@ function save_edit_profile(){
     input_spans.forEach(e => {
         e.style.display = 'inline';
     });
+    if(name.innerText === '-'){name_on_card.innerText = 'Signed out'; name_on_card.classList.remove('new_name');}
+    else{name_on_card.innerText = name.innerHTML; name_on_card.classList.add('new_name');}
 }
 function cancel_edit_profile(){
+    profile_pic.src = default_avatar;
     edit_prof.style.display = 'inline';
     save_prof.style.display = 'none';
     cancel_prof.style.display = 'none';

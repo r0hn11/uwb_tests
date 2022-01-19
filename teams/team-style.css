@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100;1,200;1,300;1,400&display=swap');
 body{
     font-family: var(--formal);
+    background: var(--theme);
 }
 .hidden_up{
     opacity: 0;
@@ -13,11 +14,12 @@ body{
     opacity: 0;
     transform: translateY(50px);
 }
+.team_par a:hover{background: transparent;}
 /*--------------------------------------------------------BREADCRUMB*/
 .breadcrumb_par{
     justify-content: center;
-    background: #EFF6FB;
-    box-shadow: 0 0 5px rgba(68, 68, 68, 0.2);
+    background: var(--breadcrumb-bg);
+    box-shadow: var(--breadcrumb-shdow);
 }
 .breadcrumb{
     justify-content: flex-start;
@@ -33,13 +35,14 @@ body{
     color: var(--accent);
     padding: 0;
 }
-.breadcrumb_par .breadcrumb .blog a{
+.breadcrumb_par .breadcrumb .tm a, .breadcrumb_par .breadcrumb .td a{
     color: var(--text);
     padding: 0;
 }
 .separator{margin: 0 5px;}
-.breadcrumb_par .breadcrumb a:focus{
+.breadcrumb_par .breadcrumb a:hover, .breadcrumb_par .breadcrumb a:focus{
     text-decoration: underline;
+    background: transparent;
 }
 
 /*--------------------------------------------------------TEAM SECTION*/
@@ -59,7 +62,19 @@ body{
     text-align: center;
     color: var(--text);
     font-size: 25px;
+    position: relative;
+}
+.sect_ttl::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
     background: url(../common_images/capsule.png) no-repeat center center/contain;
+    z-index: -1;
+}
+@media (prefers-color-scheme: dark){
+    .sect_ttl::after{opacity: 0.1;}
 }
 .profiles{
     align-items: center;
@@ -72,8 +87,8 @@ body{
     color: var(--text);
     align-items: center;
     background: var(--card);
-    box-shadow: 0 0 15px rgba(68, 68, 68, 0.2);
-    padding: 25px;
+    box-shadow: var(--prof-card-shdow);
+    padding: 25px 25px 22px 25px;
     /* width: 500px; */
     min-width: 350px;
     border-radius: 5px;
@@ -85,7 +100,7 @@ body{
     width: 130px;
     border-radius: 50%;
     filter: contrast(0.8);
-    box-shadow: inset 0 0 15px rgba(68, 68, 68, 0.459);
+    box-shadow: inset 0 0 15px rgba(68, 68, 68, 0.7);
 }
 .profiles .pr_card .name{
     text-align: center;
@@ -96,13 +111,12 @@ body{
     margin-bottom: -3px;
 }
 .profiles .pr_card .designation{
-    color: rgba(68, 68, 68, 0.75);
+    color: var(--sub-txt);
     letter-spacing: 1px;
     text-align: center;
     font-size: 14px;
     max-width: 30ch;
-    /* font-style: italic; */
-    /* font-weight: 500; */
+    margin-top: 5px;
 }
 .profiles .pr_card .social{
     margin-top: 5px;

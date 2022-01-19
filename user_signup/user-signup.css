@@ -9,6 +9,18 @@
     --accent : #67B0D1;
     --label : #a9a9a9;
     --links : #67B0D1;
+    --input-bg : #f5f5f5;
+    --shdow : 0 0 10px rgba(0, 0, 0, 0.2);
+}
+@media (prefers-color-scheme){
+    :root{
+        --text : #fff;
+        --theme : #222;
+        --card : #333;
+        --label : #a9a9a9;
+        --input-bg : #505050;
+        --shdow : 0 0 10px rgba(0, 0, 0, 0.5);
+    }
 }
 /*------------------------------------------------------------------RESET CSS*/
 *{
@@ -44,7 +56,8 @@ button{
 input{
     outline: none;
     border: none;
-    background: #f5f5f5;
+    color: var(--text);
+    background: var(--input-bg);
     padding: 5px 10px;
     margin-bottom: 3px;
     font-weight: 500;
@@ -73,8 +86,9 @@ a{
 /*------------------------------------------------------------------FORMS */
 .wrapper{
     position: relative;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shdow);
     border-radius: 3px;
+    color: var(--text);
     background: var(--card);
     margin: 10px;
     overflow: hidden;

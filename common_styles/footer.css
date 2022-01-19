@@ -104,7 +104,7 @@
     font-size: 25px;
 }
 .btt:hover>i, .btt:focus>i{
-    text-shadow: 0 0 4px rgb(97, 255, 255);
+    filter: saturate(3) brightness(1.2);
 }
 
 /*--------------------------------------------------------RESPONSIVE*/

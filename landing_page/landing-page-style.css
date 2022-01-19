@@ -103,7 +103,7 @@ svg>path{
     content: '';
     position: absolute;
     inset: 0;
-    background: url(images/hero_bg.jpg) no-repeat bottom center/cover;
+    background: url(images/hero_bg1.jpg) no-repeat bottom center/cover;
     opacity: 0.6;
     z-index: 1;
 }
@@ -173,7 +173,7 @@ svg>path{
     text-align: center;
     font-size: 45px;
     font-weight: 700;
-    animation: glow 3s 2s ease-in-out 1 forwards;
+    animation: glow 3s 5s ease-in-out 1 forwards;
 }
 .hero_low .hl2{
     letter-spacing: 1px;

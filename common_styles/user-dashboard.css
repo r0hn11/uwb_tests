@@ -14,7 +14,9 @@
     color: var(--links);
     display: none;
     margin-bottom: -2px;
-    font-size: 14px;
+}
+@media (prefers-color-scheme : dark){
+    .db_wrap_par input{--text-fade : rgba(255, 255, 255, 0.2);}
 }
 .db_wrap_par{
     padding: 0 var(--padd_h);
@@ -23,7 +25,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
-    background: rgba(34, 34, 34, 0.1);
+    background: var(--bg-overlay);
     backdrop-filter: saturate(0);
     position: fixed;
     inset: 0;
@@ -144,7 +146,7 @@
     border: 3px solid transparent;
     position: relative;
     opacity: 0;
-    transition: 0.2s ease-in-out;
+    transition: 0.4s ease-in-out;
 }
 
 .db_wrap .main_db .edit_avatars .ea_icons .avatars:hover{
@@ -264,7 +266,7 @@
     }
     .db_wrap{
         align-items: center;
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
     .main_db, .extras{
         align-items: center;
@@ -277,21 +279,15 @@
     .edit_fields, .edit_value{text-align: center;}
 }
 @media screen and (max-width:500px){
-    .db_wrap_par{padding: 20px;}
-    .db_wrap .main_db .profile{
-        min-height: 60px;
-        min-width: 60px;
-        height: 60px;
-        width: 60px;
-    }
-    .db_wrap{font-size: 0.7em;}
+    .db_wrap_par{padding: 20px; justify-content: center;}
+    .db_wrap{font-size: 0.8em;}
     .db_wrap .btns{
         flex-direction: column;
         align-items: center;
-        gap: 3px;
+        gap: 5px;
     }
     .db_wrap .btns .edit, .db_wrap .btns .save, .db_wrap .btns .cancel{
-        font-size: 12px;
+        font-size: 13px;
     }
     #user_mail{
         max-width: 30ch;
@@ -299,10 +295,11 @@
     }
 }
 @media screen and (max-width:350px){
+    .db_wrap{padding: 20px;}
     .db_wrap .main_db .edit_avatars .ea_icons{
         grid-template-columns: repeat(2, auto);
     }
-    .db_wrap_par{padding: 10px;}
     .db_wrap .fa-times{transform: scale(0.8); right: 2px;}
     #user_mail{max-width: 20ch;}
+    .db_wrap_par input{width: 85%;}
 }

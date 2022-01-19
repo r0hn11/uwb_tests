@@ -10,32 +10,45 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
     <style>
+        :root{
+            --text : #444;
+            --icon-clr : #bbb;
+            --theme : #eee;
+        }
+        @media (prefers-color-scheme){
+            :root{
+                --theme : #222;
+                --text : #aaa;
+                --icon-clr : #666;
+            }
+        }
         body{
             display: flex;
             align-items: center;
             font-family: 'Poppins', sans-serif;
-            letter-spacing: 1px;
-            color: #444;
+            letter-spacing: 2px;
+            color: var(--text);
+            background: var(--theme);
         }
         .wrapper{
             padding: 30px;
         }
         i{
             font-size: 40px;
-            color: #bbb;
+            color: var(--icon-clr);
             margin: 10px 0;
         }
         .m1{
+            opacity: 0.5;
             font-size: 30px;
-            font-weight: 700;
-            color: #aaa;
+            font-weight: 600;
         }
         .m2{
-            color: #aaa;
+            opacity: 0.5;
             font-size: 15px;
         }
         .m3{
-            font-weight: 600;
+            font-weight: 400;
             margin-bottom: 18px;
         }
         a{
